@@ -1,0 +1,77 @@
+<div class="panel panel-danger">
+    <div class="panel-heading" style="text-align:center">Design & Thinking Projects</div>
+</div>
+<br>
+<div class="panel panel-default">
+                    <div ng-init="getProjects()">
+                        <table class="panel-body table table-hover table-condensed">
+                            <thead class="panel-heading">
+                              <tr>
+                                <th>S No</th>
+                                <th>DT Project</th>
+                                <th>Created By</th>
+                                <th>Created Date</th>
+                                <th>Status</th>
+                                <th>Stage</th>
+                                <th></th>
+                                <th></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr ng-repeat="project in projects">
+                                <td>
+                                    <div ng-hide="editingData[project.projectId]">{{project.projectId}}</div>
+                                    <div ng-show="editingData[project.projectId]"><input type="number" ng-model="project.projectId" class="form-control"/></div>
+                                </td>
+                                <td>
+                                    <div ng-hide="editingData[project.projectId]">{{project.projectName}}</div>
+                                    <div ng-show="editingData[project.projectId]"><input type="text" ng-model="project.projectName" class="form-control"/></div>
+                                </td>
+                                <td>
+                                    <div>{{project.createdBy}}</div>
+                                    <!-- <div ng-show="editingData[project.projectId]"><input type="text" ng-model="project.createdBy" class="form-control"/></div> -->
+                                </td>
+                                <td>
+                                    <div>{{project.createdDate}}</div>
+                                    <!-- <div ng-show="editingData[project.projectId]"><input type="text" ng-model="project.createdDate" class="form-control"/></div> -->  
+                                </td>
+                                <td>
+                                    <div ng-hide="editingData[project.projectId]">{{project.projectStatus}}</div>
+                                    <div ng-show="editingData[project.projectId]"><input type="text" ng-model="project.projectStatus" class="form-control"/></div>  
+                                </td>
+                                <td>
+                                    <div ng-hide="editingData[project.projectId]">{{project.projectStage}}</div>
+                                    <div ng-show="editingData[project.projectId]"><input type="text" ng-model="project.projectStage" class="form-control"/></div>  
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary btn-xs" ng-hide="editingData[project.projectId]" ng-click="modify(project)">Edit</button>
+                                    <button type="button" class="btn btn-primary btn-xs" ng-show="editingData[project.projectId]" ng-click="update(project)">Update</button>
+                                </td>
+                                <td><button type="button" class="btn btn-primary btn-xs"  ng-click="selectProject(project)" ui-sref="home.projects.details">Details</button></td>
+                              </tr>                             
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+<div style="text-align: center"><button type="button" class="btn btn-info" ng-click="!(show=true)">Create Project</button></div><br>
+<div class="panel panel-danger" ng-show="show">
+    <div class="panel-heading" style="text-align:center">Create Design Thinking Project</div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-4">DT Project</div>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" ng-model="dtProject">
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-sm-4">Research Agenda</div>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" ng-model="ResearchtAgenda">
+            </div>
+        </div><br>
+        <div style="text-align: center">
+            <button type="button" class="btn btn-info" ng-click="!(show=false)">Cancle</button>
+            <button type="button" class="btn btn-info" ng-click="addProject()">Submit</button>
+        </div>
+    </div>
+</div>

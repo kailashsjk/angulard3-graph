@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <base href="/"/> -->
+  <title>Design Thinking</title>
+  <!-- <meta charset="utf-8"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+ <script src="lib/jquery.js"></script>
+  <script src="lib/bootstrap.min.js"></script> 
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.js"></script>
+    <script src="lib/uiBreadcrumbs.js"></script>
+    
+    <script src="module/module.js"></script>
+   
+    <script src="controllers/homeController.js"></script>
+   
+    <script src="controllers/carRecordController.js"></script>
+  
+    <script src="services/carRecordService.js"></script>
+   
+   
+</head>
+<body ng-app = "designThinking">
+
+<div>
+
+<!-- <div class="row">
+    <div class="panel-heading" style="text-align:center"><h2>Design Thinking</h2></div>
+    <img class="col-lg-12" src = "img/banner.jpg"/>
+</div>
+    <div>
+        <ui-breadcrumbs displayname-property="data.displayName" abstract-proxy-property="data.proxy" template-url="partials/uiBreadcrumbs.tpl.html"></ui-breadcrumbs></div> -->
+    <div ui-view="head" class="container-fluid"></div>
+    <div ui-view="main" class="container-fluid"></div>
+    <div ui-view="details" class="container-fluid"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<div class="panel panel-danger">
+    <div class="panel-heading" style="text-align:center">Car Detail</div>
+</div>
+
+<div class="row">
+    <div class="col-sm-3" style="font-weight: bold">
+        Car Details :
+    </div>
+    
+</div><br>
+<div class="panel panel-default">
+                    
+                    <div ng-init="getCarDetail()">
+                        <table class="panel-body table table-condensed">
+                            <thead class="panel-heading">
+                              <tr>
+                                <th>Vid</th>
+                                <th>model</th>
+                                <th>speed</th>
+                                <th>city</th>
+                                
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr ng-repeat="car in carDetail">
+                                <td>
+                                    <div>{{carDetail.vin}}</div>
+                                    
+                                </td>
+                                <td>
+                                    <div>{{carDetail.model}}</div>
+                                    
+                                </td>
+                                <td>
+                                    <div>{{carDetail.speed}}</div>
+                                   
+                                </td>
+                                <td>
+                                    <div>{{carDetail.city}}</div>
+                                   
+                                </td>
+                                
+                                </tr>                          
+                            </tbody>
+                        </table>
+             </div>
+    </div>
+
+       
+
+
+
